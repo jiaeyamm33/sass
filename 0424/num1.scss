@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+// .scss 파일로 저장
+
+$color01:#ff0;
+$bgcolor01:#ccc;
+
+h2 {
+  color: #ff0;
+}
+
+p {
+  background: $bgcolor01;
+}

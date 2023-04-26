@@ -1,0 +1,111 @@
+
+@mixin box {
+  height: 50px;
+  border: 3px solid #000;
+  margin-bottom: 20px;
+}
+
+div {
+  @include box;
+}
+
+$width1: 300px;
+$width2: 700px;
+
+.box01 {
+  width: $width1;
+  background-color: if($width1>500, pink, lightblue);
+}
+
+
+.box02 {
+  width: $width2;
+  background-color: if($width2>500, pink, lightblue);
+}
+
+$width3: 768px;
+$width4: 1025px;
+
+.box03 {
+  width: $width3;
+  @if($width3>=767) {
+    background-color: pink;
+  } @else {
+    background-color: lightblue;
+  }
+}
+
+.box04 {
+  width: $width4;
+  @if($width4>=1025) {
+    background-color: orange;
+  } @else {
+    background: gray;
+  }
+}
+
+$mobile: 768px;
+$tablet: 1024px;
+
+@mixin pc-only {
+  @media screen and (min-width: ($tablet + 1)) {
+    .box05 {
+      background: #ccc;
+    }
+  } 
+}
+
+@mixin mobile { 
+  @media screen and (max-width: ($mobile - 1)) {
+    .box05 {
+      background: black;
+    }
+  } 
+}
+
+@mixin tablet { 
+  @media screen and (min-width: ($mobile - 1)) and (max-width: ($tablet + 1)) {
+    .box05 {
+      background: navy;
+    }
+  } 
+}
+
+
+@include pc-only;
+@include tablet;
+@include mobile;
+
+// mediaquery
+
+// @mixin respond-to($media) {
+
+//   @if $media == mobile { // mobile
+
+//     @media only screen and (max-width: $tabletSize - 1) { @content; }
+
+//   }
+
+//   @else if $media == tablet { // tablet
+
+//     @media only screen and (min-width: $tabletSize) and (max-width: $pcSize - 1) { @content; }
+
+//   }
+
+//   @else if $media == pc { // pc
+
+//     @media only screen and (min-width: $pcSize) { @content; }
+
+//   }
+
+//   @else if $media == mt { // mobile~tablet
+//       @media only screen and (max-width: $pcSize - 1) { @content; }
+
+//   }
+//   @else if $media == tp { // tablet~pc
+
+//       @media only screen and (min-width: $tabletSize) { @content; }
+
+//   }
+
+// }

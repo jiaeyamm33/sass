@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제</title>
+  <link rel="stylesheet" href="./css/style3.css">
+  
+</head>
+<body>
+
+  <article>
+    <h1>내가 좋아하는 것 모음.zip</h1>
+    <ul class="like_list">
+      <li class="on">
+        <a href="#none" title="커피">커피</a>
+        <div class="tab_img">
+          <img src="./images/coffee.jpg" alt="커피">
+        </div>
+      </li>
+      <li>
+        <a href="#none" title="디저트">디저트</a>
+        <div class="tab_img">
+          <img src="./images/sweets.jpg" alt="디저트">
+        </div>
+      </li>
+      <li>
+        <a href="#none" title="침대">침대</a>
+        <div class="tab_img">
+          <img src="./images/bed.jpg" alt="침대">
+        </div>
+      </li>
+      <li>
+        <a href="#none" title="영화/드라마/책">영화/드라마/책</a>
+        <div class="tab_img">
+          <img src="./images/contents.jpg" alt="컨텐츠">
+        </div>
+      </li>
+      <li>
+        <a href="#none" title="낮잠">낮잠</a>
+        <div class="tab_img">
+          <img src="./images/nap.jpg" alt="낮잠">
+        </div>
+      </li>
+      <li>
+        <a href="#none" title="여행">여행</a>
+        <div class="tab_img">
+          <img src="./images/trip.jpg" alt="여행">
+        </div>
+      </li>
+    </ul>
+  </article>
+
+  <script>
+
+    let tabMenu = document.querySelectorAll('article ul li');
+    console.log(tabMenu);
+    for(let i = 0; i < tabMenu.length; i++) {
+      tabMenu[i].querySelector('a').addEventListener('click', function(){
+        for(let j = 0; j < tabMenu.length; j++) {
+          tabMenu[j].classList.remove('on');
+        } 
+        this.parentNode.classList.add('on');
+      });
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASS Index</title>
+    <style>
+        * {
+            margin: 0px; padding: 0px; font-style: "맑은 고딕",arial,sans-serif; 
+            /* 대체 문자 1번(맑은고딕), 2번(arial), 3번(sans-serif) */ font-size: 12px;
+            color: #333333;
+        }
+        h1, h2 {
+            text-align: center;
+            padding: 16px 0px;
+        }
+        h1 img {
+            width: 65px;
+            height: 40px;
+        }
+        h2 { line-height: 40px;}
+        .border01 {
+            border-top: 3px solid #CD6799;
+            border-bottom: 3px solid #CD6799;
+        }
+
+        .bgcolor01 {
+            background-color: #CD6799;
+        }
+        dl {
+            text-indent: 10px;
+        }
+        dt {
+            font-size: 14px;
+            color : #333;
+            padding: 12px 0px;
+            font-weight: bold;
+            border-bottom: 1px solid #ffffff;
+        }
+        dd { border-bottom: 1px solid #cccccc; text-indent: 16px;} 
+        dd > a {
+            display: block;
+            font-size: 13px;
+            line-height: 40px;
+            color: #333333;
+            text-decoration: none;
+        }
+        dd > a:hover {
+            background-color: pink;
+            color: #fff;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #666;
+            text-align: center;
+            line-height: 50px;
+        }
+        footer > address {
+            font-style: normal;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1><a href="./index.html" title="메뉴로 돌아가기">
+    <img src="./0426/logo.png" title="로고"></a>
+    </h1>
+</header>
+<main>
+    <section class="border01"></section>
+    <h2>SASS</h2> 
+    <dl>
+        <dt class="bgcolor01">[ 1회차 04/24 ] 사스 소개와 문법 </dt>
+        <dd><a href="./0424/01_introduce.html" title="html5"> 1) 소개와 문법</a></dd>
+        <dd><a href="./0424/02_method.html" title="semantics">2) 믹싱, 인클루드 기법</a></dd>
+    </dl>
+    <dl>
+        <dt class="bgcolor01">[ 2일차 04/25 ] 변수</dt>
+        <dd><a href="./0425/01_variable.html" title="제목태그"> 1) 변수 </a></dd>
+        <dd><a href="./0425/02_rule.html" title="제목태그"> 2) 규칙 </a></dd>
+        <dd><a href="./0425/04_import.html" title="제목태그"> 3) import </a></dd>
+        <dd><a href="./0425/03_ex.html" title="제목태그"> 실습 예제 1_ 탭메뉴 </a></dd>
+        <dd><a href="./0425/login.html" title="제목태그"> 실습 예제 2_ 로그인 버튼 만들기 </a></dd>
+        
+
+    </dl>
+    <dl>
+        <dt class="bgcolor01">[ 3일차 04/26 ] 함수와 반복문 </dt>
+        <dd><a href="./0426/function.html" title="이미지"> 1) 함수</a></dd>
+        <dd><a href="./0426/if.html" title="svg"> 2) if문 </a></dd>
+        <dd><a href="./0426/loop.html" title="svg"> 3) 반복문(for, while) </a></dd>
+        <dd><a href="./0426/exec01.html" title="svg"> 실습 예제 1_ 레이아웃 만들기 </a></dd>
+    </dl>
+
+</main>
+<footer>
+    <address>Copyright&copy; 2023 HTML/CSS3 학습페이지 allrights reserved.</address>
+</footer>
+</body>
+</html>

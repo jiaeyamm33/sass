@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.btn_list {
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn_box {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.btn_list div {
+  box-sizing: border-box;
+}
+
+a {
+  box-sizing: border-box;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.login {
+  width: 250px;
+  font-weight: bold;
+  background-color: tomato;
+}
+
+.back_n {
+  background: url("../images/sns_icon.png") no-repeat 63.377% 22.114%;
+  background-size: 955px 632px;
+  width: 58px;
+  height: 58px;
+}
+
+.back_k {
+  background: url("../images/sns_icon.png") no-repeat 84.836% 16.143%;
+  background-size: 950px 620px;
+  width: 64px;
+  height: 64px;
+}
+
+.naver_login {
+  width: 250px;
+  font-weight: bold;
+  background-color: #47B748;
+  line-height: 58px;
+  color: #fff;
+}
+
+.kakao_login {
+  width: 250px;
+  font-weight: bold;
+  background-color: #FFF200;
+  line-height: 64px;
+}/*# sourceMappingURL=style4.css.map */

@@ -1,0 +1,59 @@
+
+// style.css
+
+//wrap의 가로크기변수
+
+$max-width: 1180px;
+
+//12 컬럼의 그리드
+// 박스가 가지는 컬럼수에 따라 가로 크기가 지정
+@function columns($number:1, $all:12) {
+  @return $max-width * ($number/$all);
+}
+
+.wrap {
+  width: $max-width; // 1180 짜리 가장 큰 박스
+  margin: 0px auto;
+  border: 3px solid tomato;
+
+  .box01 {
+    background-color: darkblue;
+    height: 100px;
+    width: columns();
+  }
+  .box02 {
+    background-color: darkorange;
+    height: 100px;
+    width: columns(6);
+
+  }
+  .box03 {
+    background-color: darkcyan;
+    height: 100px;
+    width: columns(12);
+  }
+}
+
+// 내장함수로 서식 변경하기
+
+$mainColor: #0099ff;
+
+button {
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background: $mainColor;
+  color: #fff;
+
+  &.btn02 {
+    background: lighten($mainColor, 20%);
+  }
+}
+
+@function my-lighten($num) {
+  @return 0.1*$num;
+}
+
+.btn03 {
+  opacity: my-lighten(2);  
+}

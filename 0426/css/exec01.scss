@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+// 전역설정 시작
+
+*{
+  margin : 0;
+  padding : 0;
+}
+
+// 헤더 높이값 변수
+// pc, tablet
+$h-h01 : 123px;
+// mobile
+$h-h02 : 80px;
+
+
+// 푸터 높이값 변수
+$f-h : 110px;
+
+
+// pc 가로 길이
+$max-width01 : 940px;
+
+
+// 아티클 고정 높이
+$art-h01 : 270px;
+$art-h02 : 150px;
+
+header, footer, main {
+  width : 100%;
+}
+
+header , footer{
+  background-color : cornflowerblue;
+}
+
+.banner{
+  height : 500px;
+  background-color : darkslategray;
+}
+
+.ctnt_area{
+  margin : 0 auto;
+  display : flex;
+  flex-wrap : wrap;
+}
+.ctnt_area .sect-art{
+  border : 1px solid tomato;
+  box-sizing : border-box;
+}
+.sect01 .sect-art{
+  height : $art-h01;
+}
+.sect02 .sect-art{
+  height : $art-h02;
+}
+
+// 아티클 레이아웃 함수 pc
+@function layout01($part : 14, $all : 47 ){
+  @return ( $max-width01 * ($part / $all) );
+}
+
+// 아티클 레이아웃 함수 tablet, mobile
+@function layout02($part, $all){
+  @return ( 100% * ($part / $all) );
+}
+
+// pc 버전
+@media screen and ( min-width : 1025px ){
+  header {
+    height : $h-h01;
+  }
+  .ctnt_area{
+    width : $max-width01;
+  }
+  .ctnt_area .sect-art{
+    width :  layout01();
+  }
+  .sect01 .sect-art:nth-child(2){
+    width :  layout01( 19 );
+  }
+  .sect02 .sect-art:nth-child(2){
+    width :  layout01( 19 );
+  }
+  footer{
+    height : $h-h01;
+  }
+}
+
+@media screen and ( max-width : 1024px ) and (min-width : 769px ) {
+  header {
+    height : $h-h01;
+  }
+  .ctnt_area{
+    width : 100%;
+  }
+  .ctnt_area .sect-art{
+    width :  layout02(1,2);
+  }
+  .ctnt_area .sect-art:last-child{
+    width :  layout02( 1 , 1 ) !important;
+    background-color : #ccc;
+  }
+  footer{
+    height : $h-h01;
+  }
+}
+
+@media screen and ( max-width : 768px ) {
+  header {
+    height : $h-h02;
+  }
+  .ctnt_area{
+    width : 100%;
+  }
+  .ctnt_area .sect-art{
+    width :  layout02(1,1);
+  }
+  footer{
+    height : $f-h;
+  }
+}
